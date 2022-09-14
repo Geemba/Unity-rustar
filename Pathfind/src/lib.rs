@@ -177,16 +177,16 @@ pub fn ex()
         }
     }
     
-    let aaa = create_vec();
+    let vec = create_vec();
 
     for vector2int in &map
     {
-        add_to_vec(aaa, *vector2int);
+        add_to_vec(vec, *vector2int);
     }
 
     let graph_ptr = unsafe 
     {
-        allocate_graph(aaa ,Bounds { x_min: 0, y_min: 0 , x_max: map.last().unwrap().x + 1, y_max: map.last().unwrap().y + 1 })
+        allocate_graph(vec ,Bounds { x_min: 0, y_min: 0 , x_max: map.last().unwrap().x + 1, y_max: map.last().unwrap().y + 1 })
     };
 
     find_path(Vector2Int::new(0,0),Vector2Int::new(map.last().unwrap().x,map.last().unwrap().y), graph_ptr);
