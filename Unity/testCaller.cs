@@ -1,5 +1,4 @@
 using rustAstar;
-using Toolbox;
 using System.Collections;
 using Debug = UnityEngine.Debug;
 using System.Collections.Generic;
@@ -17,6 +16,9 @@ public class testCaller : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            // AllocGraph is called before starting the algorithm 
+            // to give the list of walkable tiles to rust
+            // it will keep living until you dont call DeallocGraph()
             RustAstar.AllocGraph(RustAstar.TestList, RustAstar.Bounds.Test);
             var st = new Stopwatch();
 
@@ -34,20 +36,6 @@ public class testCaller : MonoBehaviour
             RustAstar.DeallocGraph();
 
             print("Alive");
-        }
-        if (Input.GetMouseButtonDown(1))
-        {
-            foreach (var pos in RustAstar.TestList)
-            {
-                map.SetTile((Vector3Int)pos,tile);
-                print(map.HasTile((Vector3Int)pos));
-            }
-            var path = AStar.FindPath(map,map.GetCellCenterWorld(new Vector3Int(0, 0, 0)), map.GetCellCenterWorld(new Vector3Int(1, 1, 0)));
-
-            foreach (var item in path)
-            {
-                print(item);
-            }
         }
     }
 }
