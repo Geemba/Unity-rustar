@@ -4,13 +4,9 @@ using Debug = UnityEngine.Debug;
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class testCaller : MonoBehaviour
 {
-    [SerializeField] Tilemap map;
-    [SerializeField] TileBase tile;
-
     // Update is called once per frame
     void Update()
     {
