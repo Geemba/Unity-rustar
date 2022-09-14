@@ -1,7 +1,5 @@
 using rustAstar;
-using System.Collections;
 using Debug = UnityEngine.Debug;
-using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
