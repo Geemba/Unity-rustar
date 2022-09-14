@@ -220,7 +220,7 @@ namespace rustAstar
         [DllImport("rust_pathfind", EntryPoint = "create_vec", CallingConvention = CallingConvention.Cdecl)]
         internal static extern IntPtr create_vec();
 
-        [SuppressUnmanagedCodeSecurity]
+        //[SuppressUnmanagedCodeSecurity]
         [DllImport("rust_pathfind", EntryPoint = "add_to_vec", CallingConvention = CallingConvention.Cdecl)]
         internal static extern void add_to_vec(IntPtr vec_ptr, RustVector2Int pos);
 
@@ -239,7 +239,7 @@ namespace rustAstar
 
         /// 
 
-        [SuppressUnmanagedCodeSecurity]
+        //[SuppressUnmanagedCodeSecurity]
         [DllImport("rust_pathfind", EntryPoint = "find_path", CallingConvention = CallingConvention.Cdecl)]
         internal static extern Buffer find_path(RustVector2Int start, RustVector2Int goal, IntPtr graph_ptr);
     }
